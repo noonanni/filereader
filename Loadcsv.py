@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 
 Corona = pd.read_csv(
 'CoronaData.csv', 
+header=None,
 low_memory=False,
 dtype={"value": float},
 usecols=['country','population','lat','long','date','type','value'],
