@@ -3,15 +3,19 @@ import tabulate as tb
 import matplotlib.pyplot as plt
 
 
-Corona = pd.read_csv(
+df = pd.read_csv(
 'CoronaData.csv', 
 low_memory=False,
 dtype={"value": float},
-usecols=['date', 'country', 'value', 'type', 'long', 'population', 'lat'],
+usecols=['country', 'type'],
 na_values =['.','??']
 )
+
 #Corona.groupby('country').value.sum().plot(kind='bar')
-plt.plot(Corona['country'], Corona['population'], Corona['date'])
+#df.groupby('country','type').plot(kind='bar')
+df.groupby('country').sum('type').plot(kind='bar')
+
+#plt.plot(Corona['country'], Corona['population'], Corona['date'])
 
 
 plt.show()
