@@ -5,10 +5,9 @@ import matplotlib.pyplot as plt
 
 Corona = pd.read_csv(
 'CoronaData.csv', 
-header=None,
 low_memory=False,
 dtype={"value": float},
-usecols=['country','population','lat','long','date','type','value'],
+usecols=['date', 'country', 'value', 'type', 'long', 'population', 'lat'],
 na_values =['.','??']
 )
 #Corona.groupby('country').value.sum().plot(kind='bar')
