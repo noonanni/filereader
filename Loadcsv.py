@@ -13,7 +13,6 @@ na_values =['.','??']
 #Corona.groupby('country').value.sum().plot(kind='bar')
 plt.plot(Corona['country'], Corona['population'], Corona['date'])
 
-Testtest
 
 plt.show()
 
