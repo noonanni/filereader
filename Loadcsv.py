@@ -11,7 +11,7 @@ def import_csv_data():
     csv_file_path = askopenfilename()
     print(csv_file_path)
     v.set(csv_file_path)
-    df = pd.read_csv(csv_file_path, 
+    df = pd.read_csv('CoronaData.csv', 
 low_memory=False,
 dtype={"value": float},
 usecols=['country','type','value'],
@@ -28,12 +28,13 @@ tk.Label(root, text='File Path').grid(row=0, column=0)
 v = tk.StringVar()
 entry = tk.Entry(root, textvariable=v).grid(row=0, column=1)
 tk.Button(root, text='Browse Data Set',command=import_csv_data).grid(row=1, column=0)
-tk.Button(root, text='Enter',command=root.quit).grid(row=1, column=1)
-root.mainloop()
+tk.Button(root, text='Enter',command=root.after).grid(row=1, column=1)
+
 
 df_columns = df.columns.tolist()
 print(df_columns)
 
+root.mainloop()
 
 
 #countries = ['Ireland','Scotland', 'France', 'Brazil']
